@@ -1,0 +1,91 @@
+[project]
+name = "blinded"
+version = "0.1.0"
+description = "Runs an AI agent on a search where it can fool itself, behind a sandbox and a locked test, and judges the result by recomputation."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Arvind Hughes" }]
+requires-python = ">=3.11"
+dependencies = [
+    "matplotlib>=3.8",
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "polars>=2.0",
+    "pyarrow>=15",
+    "pyyaml>=6",
+    "statsmodels>=0.14",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Documentation = "https://arvhug.github.io/blinded/"
+Source = "https://github.com/arvhug/blinded"
+
+[project.scripts]
+blinded = "blinded.cli:main"
+
+[project.optional-dependencies]
+# the independent check of the fill engine (tests and scripts marked cross_check); it brings
+# numba, which the engine does not need
+check = [
+    "hftbacktest>=2.4.4",
+]
+demo = [
+    "tardis-dev>=5",
+]
+# the recorder's websockets and REST calls (blinded record)
+live = [
+    "aiohttp>=3.9",
+]
+mlflow = [
+    "mlflow>=2.15",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+]
+docs = [
+    "furo>=2024.8.6",
+    "myst-parser>=3",
+    "numpydoc>=1.8",
+    "sphinx>=7.4",
+]
+
+[tool.uv]
+default-groups = ["dev", "docs"]
+# hftbacktest 2.4.4 caps numpy below 2.3 for the numba of its day; numba 0.68 takes numpy
+# below 2.6, so the check extra keeps the numpy every other install resolves
+override-dependencies = ["numpy>=1.26,<2.6"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 99
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "NPY"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "src"]
+addopts = "--doctest-modules --ignore=tests/planted --ignore=tests/reference_features"
+filterwarnings = [
+    # raised inside MLflow's SQLAlchemy store, not by blinded
+    "ignore:The ``noload`` loader strategy is deprecated",
+]
+markers = [
+    "known_answer: expected values worked out by hand",
+    "cross_check: compared with an independent implementation",
+    "edge_case: boundaries, warm-up, empty and degenerate inputs",
+    "os_sandbox: the OS sandbox through srt; skipped without it",
+]

@@ -1,0 +1,18 @@
+# market data never enters the repo
+*.parq
+*.parquet
+data/
+vault/
+workspace/
+report*.html
+DATA.md
+
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+docs/_build/
+dist/
+
+.DS_Store

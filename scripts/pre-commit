@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Rejects staged files over 5 MB and any parquet file (magic bytes PAR1).
+# Install: cp scripts/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+set -u
+limit=$((5 * 1024 * 1024))
+bad=0
+while IFS= read -r -d '' path; do
+    size=$(git cat-file -s ":$path")
+    if [ "$size" -gt "$limit" ]; then
+        echo "pre-commit: $path is $size bytes, over the 5 MB limit" >&2
+        bad=1
+    fi
+    if [ "$(git cat-file blob ":$path" | head -c 4)" = "PAR1" ]; then
+        echo "pre-commit: $path is a parquet file" >&2
+        bad=1
+    fi
+done < <(git diff --cached --name-only --diff-filter=ACMR -z)
+exit $bad

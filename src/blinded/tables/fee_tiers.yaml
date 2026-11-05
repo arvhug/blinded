@@ -1,0 +1,1004 @@
+# Maker and taker fees by venue tier, in bps of notional (negative is a rebate).
+# verified: true only where the number was read from the venue's own page or API.
+# taker_bps is null on market-maker / rebate rows where the venue sets taker by the ordinary tier.
+- venue: binance
+  product: spot
+  tier: vip0
+  name: VIP 0
+  maker_bps: 10.0
+  taker_bps: 10.0
+  requirement: "30-day spot volume under 1M USD"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/trading; paying fees in BNB gives 25% off (not in these numbers)"
+- venue: binance
+  product: spot
+  tier: vip1
+  name: VIP 1
+  maker_bps: 9.0
+  taker_bps: 10.0
+  requirement: "30-day spot volume >= 1M USD and BNB balance >= 5 BNB"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/trading; paying fees in BNB gives 25% off (not in these numbers)"
+- venue: binance
+  product: spot
+  tier: vip2
+  name: VIP 2
+  maker_bps: 8.0
+  taker_bps: 10.0
+  requirement: "30-day spot volume >= 5M USD and BNB balance >= 25 BNB"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/trading; paying fees in BNB gives 25% off (not in these numbers)"
+- venue: binance
+  product: spot
+  tier: vip3
+  name: VIP 3
+  maker_bps: 4.0
+  taker_bps: 6.0
+  requirement: "30-day spot volume >= 20M USD and BNB balance >= 100 BNB"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/trading; paying fees in BNB gives 25% off (not in these numbers)"
+- venue: binance
+  product: spot
+  tier: vip4
+  name: VIP 4
+  maker_bps: 4.0
+  taker_bps: 5.2
+  requirement: "30-day spot volume >= 75M USD and BNB balance >= 500 BNB"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/trading; paying fees in BNB gives 25% off (not in these numbers)"
+- venue: binance
+  product: spot
+  tier: vip5
+  name: VIP 5
+  maker_bps: 2.5
+  taker_bps: 3.1
+  requirement: "30-day spot volume >= 150M USD and BNB balance >= 1000 BNB"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/trading; paying fees in BNB gives 25% off (not in these numbers)"
+- venue: binance
+  product: spot
+  tier: vip6
+  name: VIP 6
+  maker_bps: 2.0
+  taker_bps: 2.9
+  requirement: "30-day spot volume >= 400M USD and BNB balance >= 1750 BNB"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/trading; paying fees in BNB gives 25% off (not in these numbers)"
+- venue: binance
+  product: spot
+  tier: vip7
+  name: VIP 7
+  maker_bps: 1.9
+  taker_bps: 2.8
+  requirement: "30-day spot volume >= 800M USD and BNB balance >= 3000 BNB"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/trading; paying fees in BNB gives 25% off (not in these numbers)"
+- venue: binance
+  product: spot
+  tier: vip8
+  name: VIP 8
+  maker_bps: 1.6
+  taker_bps: 2.5
+  requirement: "30-day spot volume >= 2B USD and BNB balance >= 4500 BNB"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/trading; paying fees in BNB gives 25% off (not in these numbers)"
+- venue: binance
+  product: spot
+  tier: vip9
+  name: VIP 9
+  maker_bps: 1.1
+  taker_bps: 2.3
+  requirement: "30-day spot volume >= 4B USD and BNB balance >= 5500 BNB"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/trading; paying fees in BNB gives 25% off (not in these numbers)"
+- venue: binance
+  product: usdm-perpetual
+  tier: vip0
+  name: VIP 0
+  maker_bps: 2.0
+  taker_bps: 5.0
+  requirement: "30-day USD-M futures volume under 5M USD"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/futures-trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/futureFee, USDT-margined column; BNB payment gives 10% off (not in these numbers)"
+- venue: binance
+  product: usdm-perpetual
+  tier: vip1
+  name: VIP 1
+  maker_bps: 1.8
+  taker_bps: 5.0
+  requirement: "30-day USD-M futures volume >= 5M USD and BNB balance >= 5 BNB"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/futures-trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/futureFee, USDT-margined column; BNB payment gives 10% off (not in these numbers)"
+- venue: binance
+  product: usdm-perpetual
+  tier: vip2
+  name: VIP 2
+  maker_bps: 1.6
+  taker_bps: 4.0
+  requirement: "30-day USD-M futures volume >= 10M USD and BNB balance >= 25 BNB"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/futures-trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/futureFee, USDT-margined column; BNB payment gives 10% off (not in these numbers)"
+- venue: binance
+  product: usdm-perpetual
+  tier: vip3
+  name: VIP 3
+  maker_bps: 1.2
+  taker_bps: 3.2
+  requirement: "30-day USD-M futures volume >= 50M USD and BNB balance >= 100 BNB"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/futures-trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/futureFee, USDT-margined column; BNB payment gives 10% off (not in these numbers)"
+- venue: binance
+  product: usdm-perpetual
+  tier: vip4
+  name: VIP 4
+  maker_bps: 1.0
+  taker_bps: 3.0
+  requirement: "30-day USD-M futures volume >= 600M USD and BNB balance >= 500 BNB"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/futures-trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/futureFee, USDT-margined column; BNB payment gives 10% off (not in these numbers)"
+- venue: binance
+  product: usdm-perpetual
+  tier: vip5
+  name: VIP 5
+  maker_bps: 0.8
+  taker_bps: 2.7
+  requirement: "30-day USD-M futures volume >= 1B USD and BNB balance >= 1000 BNB"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/futures-trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/futureFee, USDT-margined column; BNB payment gives 10% off (not in these numbers)"
+- venue: binance
+  product: usdm-perpetual
+  tier: vip6
+  name: VIP 6
+  maker_bps: 0.6
+  taker_bps: 2.5
+  requirement: "30-day USD-M futures volume >= 2.5B USD and BNB balance >= 1750 BNB"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/futures-trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/futureFee, USDT-margined column; BNB payment gives 10% off (not in these numbers)"
+- venue: binance
+  product: usdm-perpetual
+  tier: vip7
+  name: VIP 7
+  maker_bps: 0.4
+  taker_bps: 2.2
+  requirement: "30-day USD-M futures volume >= 5B USD and BNB balance >= 3000 BNB"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/futures-trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/futureFee, USDT-margined column; BNB payment gives 10% off (not in these numbers)"
+- venue: binance
+  product: usdm-perpetual
+  tier: vip8
+  name: VIP 8
+  maker_bps: 0.2
+  taker_bps: 2.0
+  requirement: "30-day USD-M futures volume >= 12.5B USD and BNB balance >= 4500 BNB"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/futures-trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/futureFee, USDT-margined column; BNB payment gives 10% off (not in these numbers)"
+- venue: binance
+  product: usdm-perpetual
+  tier: vip9
+  name: VIP 9
+  maker_bps: 0.0
+  taker_bps: 1.7
+  requirement: "30-day USD-M futures volume >= 25B USD and BNB balance >= 5500 BNB"
+  source: https://www.binance.com/bapi/composite/v1/public/commission/futures-trade-level/get
+  fetched: 2026-10-20
+  verified: true
+  note: "API behind binance.com/en/fee/futureFee, USDT-margined column; BNB payment gives 10% off (not in these numbers)"
+- venue: binance
+  product: usdm-perpetual
+  tier: lp-maker1
+  name: "USDⓈ-M Futures Maker Program Tier 1"
+  maker_bps: -0.3
+  taker_bps: null
+  requirement: "weekly USDⓈ-M maker volume share >= 0.20%, or >= 0.20% excl. BTC/ETH pairs, or quote ranking top 25-40%"
+  source: https://bin.bnbstatic.com/static/chunks/page-00ee.aa4aea36.js
+  fetched: 2026-10-20
+  verified: true
+  note: "maker rebate on USDT-M contracts; taker is the standard VIP fee (null here); table is hard-coded in the binance.com fee page JS, Liquidity Program tab; apply-only program"
+- venue: binance
+  product: usdm-perpetual
+  tier: lp-maker2
+  name: "USDⓈ-M Futures Maker Program Tier 2"
+  maker_bps: -0.4
+  taker_bps: null
+  requirement: "weekly USDⓈ-M maker volume share >= 0.60%, or >= 0.60% excl. BTC/ETH pairs, or quote ranking top 10-25%"
+  source: https://bin.bnbstatic.com/static/chunks/page-00ee.aa4aea36.js
+  fetched: 2026-10-20
+  verified: true
+  note: "maker rebate on USDT-M contracts; taker is the standard VIP fee (null here); table is hard-coded in the binance.com fee page JS, Liquidity Program tab; apply-only program"
+- venue: binance
+  product: usdm-perpetual
+  tier: lp-maker3
+  name: "USDⓈ-M Futures Maker Program Tier 3"
+  maker_bps: -0.5
+  taker_bps: null
+  requirement: "weekly USDⓈ-M maker volume share >= 1.50%, or >= 1.50% excl. BTC/ETH pairs, or quote ranking top 10%"
+  source: https://bin.bnbstatic.com/static/chunks/page-00ee.aa4aea36.js
+  fetched: 2026-10-20
+  verified: true
+  note: "maker rebate on USDT-M contracts; taker is the standard VIP fee (null here); table is hard-coded in the binance.com fee page JS, Liquidity Program tab; apply-only program"
+- venue: mexc
+  product: spot
+  tier: base
+  name: Base
+  maker_bps: 0.0
+  taker_bps: 5.0
+  requirement: "none (default account rate)"
+  source: https://api.mexc.com/api/v3/exchangeInfo?symbols=BTCUSDT,ETHUSDT,SOLUSDT
+  fetched: 2026-10-20
+  verified: true
+  note: "per-symbol makerCommission/takerCommission, identical for BTCUSDT, ETHUSDT, SOLUSDT; VIP tiers not captured (mexc.com/fee is JS-only and geo-blocked from UK)"
+- venue: mexc
+  product: usdm-perpetual
+  tier: base
+  name: Base
+  maker_bps: 0.0
+  taker_bps: 2.0
+  requirement: "none (default account rate)"
+  source: https://contract.mexc.com/api/v1/contract/detail?symbol=BTC_USDT
+  fetched: 2026-10-20
+  verified: true
+  note: "feeRateType BASE; same for SOL_USDT; fees are set per contract, see base-ethusdt"
+- venue: mexc
+  product: usdm-perpetual
+  tier: base-ethusdt
+  name: Base (ETH_USDT)
+  maker_bps: 0.0
+  taker_bps: 1.0
+  requirement: "none (default account rate)"
+  source: https://contract.mexc.com/api/v1/contract/detail?symbol=ETH_USDT
+  fetched: 2026-10-20
+  verified: true
+  note: "ETH_USDT contract shows a lower taker than BTC_USDT; feeRateType BASE"
+- venue: okx
+  product: spot
+  tier: regular
+  name: Regular user
+  maker_bps: 8.0
+  taker_bps: 10.0
+  requirement: "assets under 100K USD and 30-day spot volume under 1M USD"
+  source: https://www.okx.com/v3/users/support/common/fee/fee-table?feeClazz=12&instType=1&owner=1
+  fetched: 2026-10-20
+  verified: true
+  note: "fee group 1 (feeClazz 12, \"Group 1\" on global okx.com/fees, \"Standard\" on en-gb); BTC/ETH/SOL-USDT have groupId 12 in /api/v5/public/instruments"
+- venue: okx
+  product: spot
+  tier: vip1
+  name: VIP 1
+  maker_bps: 6.75
+  taker_bps: 8.0
+  requirement: "assets >= 100K USD or 30-day spot volume >= 1M USD"
+  source: https://www.okx.com/v3/users/support/common/fee/fee-table?feeClazz=12&instType=1&owner=1
+  fetched: 2026-10-20
+  verified: true
+  note: "fee group 1 (feeClazz 12, \"Group 1\" on global okx.com/fees, \"Standard\" on en-gb); BTC/ETH/SOL-USDT have groupId 12 in /api/v5/public/instruments"
+- venue: okx
+  product: spot
+  tier: vip5
+  name: VIP 5
+  maker_bps: 2.5
+  taker_bps: 3.5
+  requirement: "assets >= 20M USD or 30-day spot volume >= 100M USD"
+  source: https://www.okx.com/v3/users/support/common/fee/fee-table?feeClazz=12&instType=1&owner=1
+  fetched: 2026-10-20
+  verified: true
+  note: "fee group 1 (feeClazz 12, \"Group 1\" on global okx.com/fees, \"Standard\" on en-gb); BTC/ETH/SOL-USDT have groupId 12 in /api/v5/public/instruments"
+- venue: okx
+  product: spot
+  tier: vip6
+  name: VIP 6
+  maker_bps: 0.0
+  taker_bps: 3.0
+  requirement: "assets >= 50M USD or 30-day spot volume >= 200M USD"
+  source: https://www.okx.com/v3/users/support/common/fee/fee-table?feeClazz=12&instType=1&owner=1
+  fetched: 2026-10-20
+  verified: true
+  note: "fee group 1 (feeClazz 12, \"Group 1\" on global okx.com/fees, \"Standard\" on en-gb); BTC/ETH/SOL-USDT have groupId 12 in /api/v5/public/instruments"
+- venue: okx
+  product: spot
+  tier: vip7
+  name: VIP 7
+  maker_bps: -0.1
+  taker_bps: 2.3
+  requirement: "assets >= 100M USD or 30-day spot volume >= 500M USD"
+  source: https://www.okx.com/v3/users/support/common/fee/fee-table?feeClazz=12&instType=1&owner=1
+  fetched: 2026-10-20
+  verified: true
+  note: "fee group 1 (feeClazz 12, \"Group 1\" on global okx.com/fees, \"Standard\" on en-gb); BTC/ETH/SOL-USDT have groupId 12 in /api/v5/public/instruments"
+- venue: okx
+  product: spot
+  tier: vip8
+  name: VIP 8
+  maker_bps: -0.25
+  taker_bps: 2.0
+  requirement: "assets >= 250M USD or 30-day spot volume >= 1B USD"
+  source: https://www.okx.com/v3/users/support/common/fee/fee-table?feeClazz=12&instType=1&owner=1
+  fetched: 2026-10-20
+  verified: true
+  note: "fee group 1 (feeClazz 12, \"Group 1\" on global okx.com/fees, \"Standard\" on en-gb); BTC/ETH/SOL-USDT have groupId 12 in /api/v5/public/instruments"
+- venue: okx
+  product: spot
+  tier: vip9
+  name: VIP 9
+  maker_bps: -0.5
+  taker_bps: 1.5
+  requirement: "assets >= 500M USD or 30-day spot volume >= 5B USD"
+  source: https://www.okx.com/v3/users/support/common/fee/fee-table?feeClazz=12&instType=1&owner=1
+  fetched: 2026-10-20
+  verified: true
+  note: "fee group 1 (feeClazz 12, \"Group 1\" on global okx.com/fees, \"Standard\" on en-gb); BTC/ETH/SOL-USDT have groupId 12 in /api/v5/public/instruments"
+- venue: okx
+  product: usdm-perpetual
+  tier: regular
+  name: Regular user
+  maker_bps: 2.0
+  taker_bps: 5.0
+  requirement: "assets under 100K USD and 30-day futures volume under 5M USD"
+  source: https://www.okx.com/v3/users/support/common/fee/fee-table?feeClazz=4&instType=4&owner=1
+  fetched: 2026-10-20
+  verified: true
+  note: "Futures tab (feeClazz 4); BTC/ETH/SOL-USDT-SWAP and BTC-USD-SWAP all have groupId 4 in /api/v5/public/instruments"
+- venue: okx
+  product: usdm-perpetual
+  tier: vip1
+  name: VIP 1
+  maker_bps: 1.6
+  taker_bps: 4.5
+  requirement: "assets >= 100K USD or 30-day futures volume >= 5M USD"
+  source: https://www.okx.com/v3/users/support/common/fee/fee-table?feeClazz=4&instType=4&owner=1
+  fetched: 2026-10-20
+  verified: true
+  note: "Futures tab (feeClazz 4); BTC/ETH/SOL-USDT-SWAP and BTC-USD-SWAP all have groupId 4 in /api/v5/public/instruments"
+- venue: okx
+  product: usdm-perpetual
+  tier: vip5
+  name: VIP 5
+  maker_bps: 0.5
+  taker_bps: 2.6
+  requirement: "assets >= 20M USD or 30-day futures volume >= 600M USD"
+  source: https://www.okx.com/v3/users/support/common/fee/fee-table?feeClazz=4&instType=4&owner=1
+  fetched: 2026-10-20
+  verified: true
+  note: "Futures tab (feeClazz 4); BTC/ETH/SOL-USDT-SWAP and BTC-USD-SWAP all have groupId 4 in /api/v5/public/instruments"
+- venue: okx
+  product: usdm-perpetual
+  tier: vip6
+  name: VIP 6
+  maker_bps: 0.0
+  taker_bps: 2.5
+  requirement: "assets >= 50M USD or 30-day futures volume >= 1B USD"
+  source: https://www.okx.com/v3/users/support/common/fee/fee-table?feeClazz=4&instType=4&owner=1
+  fetched: 2026-10-20
+  verified: true
+  note: "Futures tab (feeClazz 4); BTC/ETH/SOL-USDT-SWAP and BTC-USD-SWAP all have groupId 4 in /api/v5/public/instruments"
+- venue: okx
+  product: usdm-perpetual
+  tier: vip7
+  name: VIP 7
+  maker_bps: -0.1
+  taker_bps: 2.3
+  requirement: "assets >= 100M USD or 30-day futures volume >= 1.5B USD"
+  source: https://www.okx.com/v3/users/support/common/fee/fee-table?feeClazz=4&instType=4&owner=1
+  fetched: 2026-10-20
+  verified: true
+  note: "Futures tab (feeClazz 4); BTC/ETH/SOL-USDT-SWAP and BTC-USD-SWAP all have groupId 4 in /api/v5/public/instruments"
+- venue: okx
+  product: usdm-perpetual
+  tier: vip8
+  name: VIP 8
+  maker_bps: -0.25
+  taker_bps: 2.0
+  requirement: "assets >= 250M USD or 30-day futures volume >= 2B USD"
+  source: https://www.okx.com/v3/users/support/common/fee/fee-table?feeClazz=4&instType=4&owner=1
+  fetched: 2026-10-20
+  verified: true
+  note: "Futures tab (feeClazz 4); BTC/ETH/SOL-USDT-SWAP and BTC-USD-SWAP all have groupId 4 in /api/v5/public/instruments"
+- venue: okx
+  product: usdm-perpetual
+  tier: vip9
+  name: VIP 9
+  maker_bps: -0.5
+  taker_bps: 1.5
+  requirement: "assets >= 500M USD or 30-day futures volume >= 20B USD"
+  source: https://www.okx.com/v3/users/support/common/fee/fee-table?feeClazz=4&instType=4&owner=1
+  fetched: 2026-10-20
+  verified: true
+  note: "Futures tab (feeClazz 4); BTC/ETH/SOL-USDT-SWAP and BTC-USD-SWAP all have groupId 4 in /api/v5/public/instruments"
+- venue: bybit
+  product: spot
+  tier: vip0
+  name: VIP 0
+  maker_bps: 10.0
+  taker_bps: 10.0
+  requirement: "base tier (assets under 100K USD, 30-day spot volume up to 1M USD)"
+  source: https://www.bybit.com/en/help-center/article/Trading-Fee-Structure
+  fetched: 2026-10-20
+  verified: true
+  note: "crypto-crypto pairs; meeting any one criterion qualifies; rates may vary by region"
+- venue: bybit
+  product: spot
+  tier: vip1
+  name: VIP 1
+  maker_bps: 6.75
+  taker_bps: 8.0
+  requirement: "asset balance >= 100K USD or 30-day spot volume >= 1M USD"
+  source: https://www.bybit.com/en/help-center/article/Trading-Fee-Structure
+  fetched: 2026-10-20
+  verified: true
+  note: "crypto-crypto pairs; meeting any one criterion qualifies; rates may vary by region"
+- venue: bybit
+  product: spot
+  tier: vip3
+  name: VIP 3
+  maker_bps: 6.25
+  taker_bps: 7.5
+  requirement: "asset balance >= 500K USD or 30-day spot volume >= 10M USD"
+  source: https://www.bybit.com/en/help-center/article/Trading-Fee-Structure
+  fetched: 2026-10-20
+  verified: true
+  note: "crypto-crypto pairs; meeting any one criterion qualifies; rates may vary by region"
+- venue: bybit
+  product: spot
+  tier: supreme-vip
+  name: Supreme VIP
+  maker_bps: 3.0
+  taker_bps: 4.5
+  requirement: "30-day spot volume >= 100M USD with API volume <= 20%"
+  source: https://www.bybit.com/en/help-center/article/Trading-Fee-Structure
+  fetched: 2026-10-20
+  verified: true
+  note: "crypto-crypto pairs; meeting any one criterion qualifies; rates may vary by region"
+- venue: bybit
+  product: spot
+  tier: pro1
+  name: Pro 1
+  maker_bps: 4.0
+  taker_bps: 6.0
+  requirement: "30-day spot volume >= 25M USD with API volume > 20%"
+  source: https://www.bybit.com/en/help-center/article/Trading-Fee-Structure
+  fetched: 2026-10-20
+  verified: true
+  note: "Pro tab; crypto-crypto pairs"
+- venue: bybit
+  product: spot
+  tier: pro3
+  name: Pro 3
+  maker_bps: 2.0
+  taker_bps: 4.0
+  requirement: "30-day spot volume >= 100M USD with API volume > 20%"
+  source: https://www.bybit.com/en/help-center/article/Trading-Fee-Structure
+  fetched: 2026-10-20
+  verified: true
+  note: "Pro tab; crypto-crypto pairs"
+- venue: bybit
+  product: spot
+  tier: pro6
+  name: Pro 6
+  maker_bps: 0.5
+  taker_bps: 1.5
+  requirement: "30-day spot volume >= 1,000M USD with API volume > 20%"
+  source: https://www.bybit.com/en/help-center/article/Trading-Fee-Structure
+  fetched: 2026-10-20
+  verified: true
+  note: "Pro tab; crypto-crypto pairs"
+- venue: bybit
+  product: spot
+  tier: mm1
+  name: MM1
+  maker_bps: -0.1
+  taker_bps: null
+  requirement: "30-day USDT trading volume > 25M USD"
+  source: https://www.bybit.com/en/help-center/article/Introduction-to-the-Market-Maker-Incentive-Program
+  fetched: 2026-10-20
+  verified: true
+  note: "Market Maker Incentive Program (apply by email); taker based on Pro tier (null here)"
+- venue: bybit
+  product: spot
+  tier: mm2
+  name: MM2
+  maker_bps: -0.5
+  taker_bps: null
+  requirement: "30-day spot maker volume share >= 0.1%"
+  source: https://www.bybit.com/en/help-center/article/Introduction-to-the-Market-Maker-Incentive-Program
+  fetched: 2026-10-20
+  verified: true
+  note: "Market Maker Incentive Program (apply by email); taker based on Pro tier (null here)"
+- venue: bybit
+  product: spot
+  tier: mm3
+  name: MM3
+  maker_bps: -0.75
+  taker_bps: null
+  requirement: "spot maker volume share >= 1% or meet liquidity requirements"
+  source: https://www.bybit.com/en/help-center/article/Introduction-to-the-Market-Maker-Incentive-Program
+  fetched: 2026-10-20
+  verified: true
+  note: "Market Maker Incentive Program (apply by email); taker based on Pro tier (null here)"
+- venue: bybit
+  product: usdm-perpetual
+  tier: vip0
+  name: VIP 0
+  maker_bps: 2.0
+  taker_bps: 5.5
+  requirement: "base tier (assets under 100K USD, 30-day derivatives volume up to 10M USD)"
+  source: https://www.bybit.com/en/help-center/article/Trading-Fee-Structure
+  fetched: 2026-10-20
+  verified: true
+  note: "VIP table covers all perpetual and futures contracts; meeting any one criterion qualifies"
+- venue: bybit
+  product: usdm-perpetual
+  tier: vip1
+  name: VIP 1
+  maker_bps: 1.8
+  taker_bps: 4.0
+  requirement: "asset balance >= 100K USD or 30-day derivatives volume >= 10M USD"
+  source: https://www.bybit.com/en/help-center/article/Trading-Fee-Structure
+  fetched: 2026-10-20
+  verified: true
+  note: "VIP table covers all perpetual and futures contracts; meeting any one criterion qualifies"
+- venue: bybit
+  product: usdm-perpetual
+  tier: vip3
+  name: VIP 3
+  maker_bps: 1.4
+  taker_bps: 3.5
+  requirement: "asset balance >= 500K USD or 30-day derivatives volume >= 50M USD"
+  source: https://www.bybit.com/en/help-center/article/Trading-Fee-Structure
+  fetched: 2026-10-20
+  verified: true
+  note: "VIP table covers all perpetual and futures contracts; meeting any one criterion qualifies"
+- venue: bybit
+  product: usdm-perpetual
+  tier: supreme-vip
+  name: Supreme VIP
+  maker_bps: 0.0
+  taker_bps: 3.0
+  requirement: "30-day derivatives volume >= 500M USD with API volume <= 20%"
+  source: https://www.bybit.com/en/help-center/article/Trading-Fee-Structure
+  fetched: 2026-10-20
+  verified: true
+  note: "VIP table covers all perpetual and futures contracts; meeting any one criterion qualifies"
+- venue: bybit
+  product: usdm-perpetual
+  tier: pro1
+  name: Pro 1
+  maker_bps: 1.0
+  taker_bps: 2.8
+  requirement: "30-day derivatives volume >= 100M USD with API volume > 20%"
+  source: https://www.bybit.com/en/help-center/article/Trading-Fee-Structure
+  fetched: 2026-10-20
+  verified: true
+  note: "Pro tab, Group 1 (major coins, e.g. BTCUSDT, ETHUSDT, SOLUSDT); Altcoin group differs"
+- venue: bybit
+  product: usdm-perpetual
+  tier: pro3
+  name: Pro 3
+  maker_bps: 0.25
+  taker_bps: 2.2
+  requirement: "30-day derivatives volume >= 750M USD with API volume > 20%"
+  source: https://www.bybit.com/en/help-center/article/Trading-Fee-Structure
+  fetched: 2026-10-20
+  verified: true
+  note: "Pro tab, Group 1 (major coins, e.g. BTCUSDT, ETHUSDT, SOLUSDT); Altcoin group differs"
+- venue: bybit
+  product: usdm-perpetual
+  tier: pro6
+  name: Pro 6
+  maker_bps: 0.0
+  taker_bps: 1.5
+  requirement: "30-day derivatives volume >= 5,000M USD with API volume > 20%"
+  source: https://www.bybit.com/en/help-center/article/Trading-Fee-Structure
+  fetched: 2026-10-20
+  verified: true
+  note: "Pro tab, Group 1 (major coins, e.g. BTCUSDT, ETHUSDT, SOLUSDT); Altcoin group differs"
+- venue: bybit
+  product: usdm-perpetual
+  tier: mm1
+  name: MM 1
+  maker_bps: -0.1
+  taker_bps: null
+  requirement: "30-day weighted maker share >= 0.03%"
+  source: https://www.bybit.com/en/help-center/article/Introduction-to-the-Market-Maker-Incentive-Program
+  fetched: 2026-10-20
+  verified: true
+  note: "Market Maker Incentive Program, Group 1 rebate (Altcoin group -0.0020/-0.0040/-0.0060%); taker based on Pro tier (null here)"
+- venue: bybit
+  product: usdm-perpetual
+  tier: mm2
+  name: MM 2
+  maker_bps: -0.25
+  taker_bps: null
+  requirement: "30-day weighted maker share >= 0.50%"
+  source: https://www.bybit.com/en/help-center/article/Introduction-to-the-Market-Maker-Incentive-Program
+  fetched: 2026-10-20
+  verified: true
+  note: "Market Maker Incentive Program, Group 1 rebate (Altcoin group -0.0020/-0.0040/-0.0060%); taker based on Pro tier (null here)"
+- venue: bybit
+  product: usdm-perpetual
+  tier: mm3
+  name: MM 3
+  maker_bps: -0.4
+  taker_bps: null
+  requirement: "30-day weighted maker share >= 1.00%"
+  source: https://www.bybit.com/en/help-center/article/Introduction-to-the-Market-Maker-Incentive-Program
+  fetched: 2026-10-20
+  verified: true
+  note: "Market Maker Incentive Program, Group 1 rebate (Altcoin group -0.0020/-0.0040/-0.0060%); taker based on Pro tier (null here)"
+- venue: deribit
+  product: inverse-perpetual
+  tier: standard
+  name: Standard
+  maker_bps: 1.5
+  taker_bps: 3.5
+  requirement: "none"
+  source: https://www.deribit.com/api/v2/public/get_instruments?currency=BTC&kind=future
+  fetched: 2026-10-20
+  verified: true
+  note: "maker_commission 0.00015, taker_commission 0.00035 on both BTC-PERPETUAL and ETH-PERPETUAL (ETH: currency=ETH); fee page agrees"
+- venue: deribit
+  product: inverse-perpetual
+  tier: vip1
+  name: VIP1
+  maker_bps: 0.0
+  taker_bps: 3.0
+  requirement: "30-day average equity >= 100K USDC, or >= 250K USD total equity"
+  source: https://support.deribit.com/api/v2/help_center/en-us/articles/25944746248989.json
+  fetched: 2026-10-20
+  verified: true
+  note: "fee page lists one perpetuals-and-futures schedule for all perps"
+- venue: deribit
+  product: inverse-perpetual
+  tier: vip2
+  name: VIP2
+  maker_bps: 0.0
+  taker_bps: 2.5
+  requirement: "30-day futures volume >= 100M USD, or options volume >= 100M USD"
+  source: https://support.deribit.com/api/v2/help_center/en-us/articles/25944746248989.json
+  fetched: 2026-10-20
+  verified: true
+  note: "fee page lists one perpetuals-and-futures schedule for all perps"
+- venue: deribit
+  product: inverse-perpetual
+  tier: vip3
+  name: VIP3
+  maker_bps: 0.0
+  taker_bps: 2.0
+  requirement: "30-day futures volume >= 500M USD, or options volume >= 500M USD"
+  source: https://support.deribit.com/api/v2/help_center/en-us/articles/25944746248989.json
+  fetched: 2026-10-20
+  verified: true
+  note: "fee page lists one perpetuals-and-futures schedule for all perps"
+- venue: deribit
+  product: inverse-perpetual
+  tier: vip4
+  name: VIP4
+  maker_bps: -0.2
+  taker_bps: 1.75
+  requirement: "30-day futures volume >= 1B USD, or options volume >= 1B USD"
+  source: https://support.deribit.com/api/v2/help_center/en-us/articles/25944746248989.json
+  fetched: 2026-10-20
+  verified: true
+  note: "fee page lists one perpetuals-and-futures schedule for all perps; taker cut from 1.85 effective 19 Oct 2026 (same page)"
+- venue: deribit
+  product: inverse-perpetual
+  tier: vip5
+  name: VIP5
+  maker_bps: -0.3
+  taker_bps: 1.5
+  requirement: "30-day futures volume >= 1.5B USD, or options volume >= 1.5B USD"
+  source: https://support.deribit.com/api/v2/help_center/en-us/articles/25944746248989.json
+  fetched: 2026-10-20
+  verified: true
+  note: "fee page lists one perpetuals-and-futures schedule for all perps; taker cut from 1.75 effective 19 Oct 2026 (same page)"
+- venue: deribit
+  product: inverse-perpetual
+  tier: vip6
+  name: VIP6
+  maker_bps: -0.4
+  taker_bps: 1.4
+  requirement: "30-day futures volume >= 3B USD, or options volume >= 3B USD"
+  source: https://support.deribit.com/api/v2/help_center/en-us/articles/25944746248989.json
+  fetched: 2026-10-20
+  verified: true
+  note: "fee page lists one perpetuals-and-futures schedule for all perps; taker cut from 1.7 effective 19 Oct 2026 (same page)"
+- venue: deribit
+  product: inverse-perpetual
+  tier: vip7
+  name: VIP7
+  maker_bps: -0.4
+  taker_bps: 1.4
+  requirement: "30-day futures volume >= 15B USD, or options volume >= 15B USD"
+  source: https://support.deribit.com/api/v2/help_center/en-us/articles/25944746248989.json
+  fetched: 2026-10-20
+  verified: true
+  note: "fee page lists one perpetuals-and-futures schedule for all perps; own-account only; taker cut from 1.7 effective 19 Oct 2026 (same page)"
+- venue: deribit
+  product: usdm-perpetual
+  tier: standard
+  name: Standard
+  maker_bps: 1.5
+  taker_bps: 3.5
+  requirement: "none"
+  source: https://www.deribit.com/api/v2/public/get_instruments?currency=USDC&kind=future
+  fetched: 2026-10-20
+  verified: true
+  note: "linear USDC perps BTC_USDC-, ETH_USDC-, SOL_USDC-PERPETUAL all return 0.00015/0.00035; VIP tiers as in the inverse-perpetual rows"
+- venue: deribit
+  product: options
+  tier: standard
+  name: Standard
+  maker_bps: 3.0
+  taker_bps: 3.0
+  requirement: "none"
+  source: https://www.deribit.com/api/v2/public/get_instruments?currency=BTC&kind=option
+  fetched: 2026-10-20
+  verified: true
+  note: "all BTC and ETH options return 0.0003/0.0003; fee is on the underlying per contract, capped at 12.5% of premium"
+- venue: deribit
+  product: options
+  tier: vip1
+  name: VIP1
+  maker_bps: 2.5
+  taker_bps: 2.5
+  requirement: "30-day average equity >= 100K USDC, or >= 250K USD total equity"
+  source: https://support.deribit.com/api/v2/help_center/en-us/articles/25944746248989.json
+  fetched: 2026-10-20
+  verified: true
+  note: "fee on the underlying per contract, capped at 10.42% of premium"
+- venue: deribit
+  product: options
+  tier: vip3
+  name: VIP3
+  maker_bps: 1.75
+  taker_bps: 1.75
+  requirement: "30-day futures volume >= 500M USD, or options volume >= 500M USD"
+  source: https://support.deribit.com/api/v2/help_center/en-us/articles/25944746248989.json
+  fetched: 2026-10-20
+  verified: true
+  note: "fee on the underlying per contract, capped at 7.29% of premium"
+- venue: deribit
+  product: options
+  tier: vip5
+  name: VIP5
+  maker_bps: 1.0
+  taker_bps: 1.0
+  requirement: "30-day futures volume >= 1.5B USD, or options volume >= 1.5B USD"
+  source: https://support.deribit.com/api/v2/help_center/en-us/articles/25944746248989.json
+  fetched: 2026-10-20
+  verified: true
+  note: "fee on the underlying per contract, capped at 4.17% of premium"
+- venue: deribit
+  product: options
+  tier: vip7
+  name: VIP7
+  maker_bps: 1.0
+  taker_bps: 1.0
+  requirement: "30-day futures volume >= 15B USD, or options volume >= 15B USD"
+  source: https://support.deribit.com/api/v2/help_center/en-us/articles/25944746248989.json
+  fetched: 2026-10-20
+  verified: true
+  note: "fee on the underlying per contract, capped at 4.17% of premium; own-account only, plus settlement-fee waiver and 10% block-fee discount"
+- venue: hyperliquid
+  product: usdm-perpetual
+  tier: tier0
+  name: Tier 0
+  maker_bps: 1.5
+  taker_bps: 4.5
+  requirement: "14-day weighted volume up to 5M USD (perps + 2x spot)"
+  source: https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees
+  fetched: 2026-10-20
+  verified: true
+  note: "USDC-margined perps; base rate before HYPE staking discount (5-40%); one tier across perps and spot"
+- venue: hyperliquid
+  product: usdm-perpetual
+  tier: tier1
+  name: Tier 1
+  maker_bps: 1.2
+  taker_bps: 4.0
+  requirement: "14-day weighted volume > 5M USD (perps + 2x spot)"
+  source: https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees
+  fetched: 2026-10-20
+  verified: true
+  note: "USDC-margined perps; base rate before HYPE staking discount (5-40%); one tier across perps and spot"
+- venue: hyperliquid
+  product: usdm-perpetual
+  tier: tier2
+  name: Tier 2
+  maker_bps: 0.8
+  taker_bps: 3.5
+  requirement: "14-day weighted volume > 25M USD (perps + 2x spot)"
+  source: https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees
+  fetched: 2026-10-20
+  verified: true
+  note: "USDC-margined perps; base rate before HYPE staking discount (5-40%); one tier across perps and spot"
+- venue: hyperliquid
+  product: usdm-perpetual
+  tier: tier3
+  name: Tier 3
+  maker_bps: 0.4
+  taker_bps: 3.0
+  requirement: "14-day weighted volume > 100M USD (perps + 2x spot)"
+  source: https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees
+  fetched: 2026-10-20
+  verified: true
+  note: "USDC-margined perps; base rate before HYPE staking discount (5-40%); one tier across perps and spot"
+- venue: hyperliquid
+  product: usdm-perpetual
+  tier: tier4
+  name: Tier 4
+  maker_bps: 0.0
+  taker_bps: 2.8
+  requirement: "14-day weighted volume > 500M USD (perps + 2x spot)"
+  source: https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees
+  fetched: 2026-10-20
+  verified: true
+  note: "USDC-margined perps; base rate before HYPE staking discount (5-40%); one tier across perps and spot"
+- venue: hyperliquid
+  product: usdm-perpetual
+  tier: tier5
+  name: Tier 5
+  maker_bps: 0.0
+  taker_bps: 2.6
+  requirement: "14-day weighted volume > 2B USD (perps + 2x spot)"
+  source: https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees
+  fetched: 2026-10-20
+  verified: true
+  note: "USDC-margined perps; base rate before HYPE staking discount (5-40%); one tier across perps and spot"
+- venue: hyperliquid
+  product: usdm-perpetual
+  tier: tier6
+  name: Tier 6
+  maker_bps: 0.0
+  taker_bps: 2.4
+  requirement: "14-day weighted volume > 7B USD (perps + 2x spot)"
+  source: https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees
+  fetched: 2026-10-20
+  verified: true
+  note: "USDC-margined perps; base rate before HYPE staking discount (5-40%); one tier across perps and spot"
+- venue: hyperliquid
+  product: usdm-perpetual
+  tier: maker-rebate1
+  name: Maker rebate tier 1
+  maker_bps: -0.1
+  taker_bps: null
+  requirement: "14-day weighted maker volume share > 0.5% of total"
+  source: https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees
+  fetched: 2026-10-20
+  verified: true
+  note: "maker fee replaces the volume-tier maker; taker stays at the volume tier (null here); page does not limit it to perps"
+- venue: hyperliquid
+  product: usdm-perpetual
+  tier: maker-rebate2
+  name: Maker rebate tier 2
+  maker_bps: -0.2
+  taker_bps: null
+  requirement: "14-day weighted maker volume share > 1.5% of total"
+  source: https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees
+  fetched: 2026-10-20
+  verified: true
+  note: "maker fee replaces the volume-tier maker; taker stays at the volume tier (null here); page does not limit it to perps"
+- venue: hyperliquid
+  product: usdm-perpetual
+  tier: maker-rebate3
+  name: Maker rebate tier 3
+  maker_bps: -0.3
+  taker_bps: null
+  requirement: "14-day weighted maker volume share > 3.0% of total"
+  source: https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees
+  fetched: 2026-10-20
+  verified: true
+  note: "maker fee replaces the volume-tier maker; taker stays at the volume tier (null here); page does not limit it to perps"
+- venue: hyperliquid
+  product: spot
+  tier: tier0
+  name: Tier 0
+  maker_bps: 4.0
+  taker_bps: 7.0
+  requirement: "14-day weighted volume up to 5M USD (perps + 2x spot)"
+  source: https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees
+  fetched: 2026-10-20
+  verified: true
+  note: "base rate before HYPE staking discount (5-40%); spot volume counts double toward tier; stable-stable pairs 80% lower"
+- venue: hyperliquid
+  product: spot
+  tier: tier1
+  name: Tier 1
+  maker_bps: 3.0
+  taker_bps: 6.0
+  requirement: "14-day weighted volume > 5M USD (perps + 2x spot)"
+  source: https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees
+  fetched: 2026-10-20
+  verified: true
+  note: "base rate before HYPE staking discount (5-40%); spot volume counts double toward tier; stable-stable pairs 80% lower"
+- venue: hyperliquid
+  product: spot
+  tier: tier2
+  name: Tier 2
+  maker_bps: 2.0
+  taker_bps: 5.0
+  requirement: "14-day weighted volume > 25M USD (perps + 2x spot)"
+  source: https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees
+  fetched: 2026-10-20
+  verified: true
+  note: "base rate before HYPE staking discount (5-40%); spot volume counts double toward tier; stable-stable pairs 80% lower"
+- venue: hyperliquid
+  product: spot
+  tier: tier3
+  name: Tier 3
+  maker_bps: 1.0
+  taker_bps: 4.0
+  requirement: "14-day weighted volume > 100M USD (perps + 2x spot)"
+  source: https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees
+  fetched: 2026-10-20
+  verified: true
+  note: "base rate before HYPE staking discount (5-40%); spot volume counts double toward tier; stable-stable pairs 80% lower"
+- venue: hyperliquid
+  product: spot
+  tier: tier4
+  name: Tier 4
+  maker_bps: 0.0
+  taker_bps: 3.5
+  requirement: "14-day weighted volume > 500M USD (perps + 2x spot)"
+  source: https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees
+  fetched: 2026-10-20
+  verified: true
+  note: "base rate before HYPE staking discount (5-40%); spot volume counts double toward tier; stable-stable pairs 80% lower"
+- venue: hyperliquid
+  product: spot
+  tier: tier5
+  name: Tier 5
+  maker_bps: 0.0
+  taker_bps: 3.0
+  requirement: "14-day weighted volume > 2B USD (perps + 2x spot)"
+  source: https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees
+  fetched: 2026-10-20
+  verified: true
+  note: "base rate before HYPE staking discount (5-40%); spot volume counts double toward tier; stable-stable pairs 80% lower"
+- venue: hyperliquid
+  product: spot
+  tier: tier6
+  name: Tier 6
+  maker_bps: 0.0
+  taker_bps: 2.5
+  requirement: "14-day weighted volume > 7B USD (perps + 2x spot)"
+  source: https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees
+  fetched: 2026-10-20
+  verified: true
+  note: "base rate before HYPE staking discount (5-40%); spot volume counts double toward tier; stable-stable pairs 80% lower"

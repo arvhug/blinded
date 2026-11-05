@@ -1,0 +1,42 @@
+blinded: 0
+name: xrp-l1-trades
+data:
+  path: ${BLINDED_DATA_PATH}
+  format: parquet
+  time: { column: ts, unit: ns, tz: UTC, clock: receive }
+  instrument_column: symbol
+  streams:
+    book:   { filter: "is_trade == false", fields: { bid: bid0_px, ask: ask0_px, bid_qty: bid0_qty, ask_qty: ask0_qty } }
+    trades: { filter: "is_trade == true",  fields: { price: price, qty: qty, side: side }, side_values: { buy: B, sell: S } }
+  availability:
+    default_delay_ms: 0
+    overrides: []
+
+target:
+  instrument: XRPUSDT
+  price: mid
+  horizons: [100ms, 1s, 10s, 60s]
+  primary_horizon: 10s
+
+grid:
+  step: 100ms
+  start: null
+  warmup: 5min
+
+execution:
+  latency_ms: 50
+  taker_fee_bps: 7.5
+  maker_fee_bps: 0.0
+  max_position: 1.0
+  min_rebalance: 0.1
+
+splits:
+  scheme: time
+  fractions: [0.50, 0.25, 0.25]
+  embargo: 5min
+
+stats:
+  se: both
+  block: 5min
+  n_boot: 1000
+  seed: 20241128
